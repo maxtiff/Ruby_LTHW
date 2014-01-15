@@ -1,17 +1,23 @@
-first, second, third = ARGV
+user = ARGV.first
+prompt = '$ '
 
-puts "The script is called: #{$0}"
+puts "Hi #{user}, I'm the #{$0} script."
+puts "I'd like to ask you a few questions."
+puts "Do you like me #{user}?"
+print prompt
+likes = STDIN.gets.chomp
+#if likes == yes ? pref = 'do' : pref = 'do not'
 
-puts "What is your first variable? "
-first = STDIN.gets.chomp
-puts "Your first variable is: #{first}"
+puts "Where do you live #{user}?"
+print prompt
+lives = STDIN.gets.chomp
 
-puts "What is your second variable? "
-second = STDIN.gets.chomp
-puts "Your second variable is: #{second}"
+puts "What kind of OS do you use?"
+print prompt
+OS = STDIN.gets.chomp
 
-puts "What is your third variable? "
-third = STDIN.gets.chomp
-puts "Your third variable is: #{third}"
-
-puts "Your variables are #{first}, #{second}, and #{third}"
+puts <<-MESSAGE
+Alright, so you said #{likes} about liking me.
+You live in #{lives}. Not sure where that is.
+And you use #{OS}. Nice.)
+MESSAGE
